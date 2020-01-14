@@ -1,0 +1,7 @@
+﻿aika, vuosi, kuukausi, aurinkokunta, kuu, planeetta,
+aine, kappale, aurinko, 
+elektroni, alkuaine, hidas, suuri, pieni,
+hallitus, eurooppa,
+nasa, avaruussukkula, sukkula, ilmakehä,
+ydin, pinta, energia, taivas, aasia, auto, talvi, kesä, tieto, meri,
+kaupunki, helsinki, suomi, koulu, valtio, venäjä, kiina, sähkö, talous, liikenne, kieli

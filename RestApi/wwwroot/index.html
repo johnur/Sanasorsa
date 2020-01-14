@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/microsoft.cognitiveservices.speech.sdk.bundle.js"></script>
+    <link href="Styles/GameStyle.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Concert+One|Kanit|Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Sanasorsa 2020</title>
+
+</head>
+<body>
+    <!--Creates the popup body, PELIOHJEET-->
+    <div class="popup-overlay">
+        <!--Creates the popup content-->
+        <div class="popup-content">
+            <div class="popupCloseButton">&times;</div>
+            <h2>Peliohjeet</h2>
+            <p>
+                Tervetuloa pelaamaan Sanasorsa -sananarvauspelia. <br />
+                Pelin tarkoitus on keksiä mahdollisimman monta annettuun sanaan <br />
+                liittyvää sanaa puhumalla tietokoneen mikrofoniin. <br />
+                Mikäli pelaajalla tulee pidempiä taukoja puheessa hän <br />
+                joutuu kirjoittamaan loput sanat, tai odottamaan seuraavan <br />
+                pelin kierroksen alkua. <br />
+                <br />
+                - Kierroksen kesto on 10 sekuntia ja peli pysähtyy automaattisesti. <br />
+                - Toistamalla anettua sanaa saa 0 pistettä.<br />
+                - Jokaisesta sanasta saa erilliset pisteet.<br />
+                - Maksimi pistemäärä per sana on 1000 p.<br />
+                <br />
+                Osa kuvituksista hankittu osoitteesta <a href="https://icons8.com/" target="_blank">Icons8.com</a>
+            </p>
+            <!--popup's close button-->
+        </div>
+    </div>
+    <!--Content shown when popup is not displayed-->
+    <div id="help">
+        <img class="open" src="Data/Ohjeet.png" alt="Peliohjeet"/>
+    </div>
+    <!--tallenna formi-->
+    <div class="popup-overlay2">
+        <div class="popup-content2">
+            <div class="popupCloseButton2">&times;</div>
+            <h2>Tallenna tuloksesi</h2>
+            <img src="Data/surr-message-sent.png" />
+            <h4 id="totalScoreForDB">Pistemääräsi on </h4>
+            <div id="saveForm">
+                <input type="text" placeholder="Syötä nimesi tähän" id="nickname" required="required" class="btn"/>
+                <button onclick="SaveScore()" class="btn">Tallenna</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="leaderBoard">
+        <img class="open3" src="Data/mirage-success.png"  alt="Top 10 -pelaajat"/>
+
+    </div>
+    <!--scoret-->
+    <div class="popup-overlay3">
+        <div class="popup-content3">
+            <div class="popupCloseButton">&times;</div>
+            <h2>Parhaat tulokset</h2>
+            <table id="scoreTable">
+                <tbody id="topScores">
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+
+
+    <span class="hidden" id="prompt"></span>
+    <div class="gameStatus">
+        <div id="totalScore">Pisteet: </div>
+        <div id="roundNumber">Kierros: </div>
+    </div>
+    <div id="content">
+        <table width="100%">
+            <tr>
+                <td align="right" valign="top"></td>
+                <td><textarea id="phraseDiv" class="round3"></textarea></td>
+            </tr>
+            <tr>
+                <td align="right" valign="top"></td>
+                <td>
+                    <div id="buttons">
+                        <button id="startRecognizeOnceAsyncButton" class="startButton btn">
+                            Näytä sana
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <h4 id="count"></h4>
+    </div>
+    <div class="hidden" id="scores"> Tämän kierroksen tulokset:</div>
+    <div id="warning" hidden>
+        <p style="font-weight:500;">Speech Recognition Speech SDK not found (microsoft.cognitiveservices.speech.sdk.bundle.js missing).</p>
+    </div>
+    <div id="ducky"><img src="Data/sorsakuva.png" /></div>
+    <script src="Scripts/Game.js"></script>
+</body>
+</html>

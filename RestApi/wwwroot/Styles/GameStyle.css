@@ -1,0 +1,419 @@
+﻿body {
+    align-items: center;
+    display: table-cell;
+    vertical-align: middle;
+    background-image: url('../Data/download.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Kanit', sans-serif;
+    color: black;
+}
+
+html, body {
+    height: 100%;
+    display: table;
+    margin: auto;
+}
+
+/*PELKENTTÄ JA ALOITUSNAPPI alkaa*/
+.gameStatus {
+    margin: 10px;
+    width: 120px;
+    height: 50px;
+    border: 3px solid black;
+    background-color: white;
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    position: absolute;
+    left: 1050px;
+    top: 450px;
+    text-align: left;
+    padding: 25px;
+    transform: rotate(10deg);
+    color: black;
+}
+
+
+#content {
+    top: 135px;
+    align-items: center;
+    vertical-align: middle;
+    position: relative;
+}
+
+.btn {
+    margin: 10px;
+    border: 3px solid black;
+    background-color: white;
+    vertical-align: middle;
+    align-items: center;
+    display: table-cell;
+    padding: 15px 25px;
+    text-align: center;
+    cursor: pointer;
+    font-size: medium;
+    font-family: 'Permanent Marker', cursive;
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    font-size: 16pt;
+}
+
+.btn:hover {
+    background-color: #d9e021;
+}
+/*#startRecognizeOnceAsyncButton {
+    color: #362a78;
+    border: 3px ridge #362a78;
+    background-color: white;
+    vertical-align: middle;
+    align-items: center;
+    display: table-cell;
+    font: status-bar;
+}*/
+
+#phraseDiv {
+    margin: 10px;
+    width: 580px;
+    height: 200px;
+    border: 3px solid black;
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    resize: none;
+    background-color: #c1d7fb;
+    outline: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 24pt;
+    vertical-align: middle;
+    font-family: 'Concert One', cursive;
+}
+
+/*.startButton {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+}*/
+
+/*PELKENTTÄ JA ALOITUSNAPPI loppuu*/
+.centerize {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+#taimer {
+    text-align: center;
+}
+
+#count {
+    text-align: center;
+    color: black;
+}
+
+
+
+/*KELLUVA ANKKA alkaa*/
+#ducky {
+    transform: translateX(100%);
+    transition: all 800ms ease;
+    float: left;
+    width: 100px;
+    height: 100px;
+    top: 500px;
+    left: 250px;
+    position: absolute;
+    -webkit-animation: mymove 10s; /* Safari 4.0 - 8.0 */
+    /*-webkit-animation-fill-mode: forwards;*/
+    -webkit-animation: ease-in-out;
+    animation: mymove 10s;
+}
+
+
+@keyframes mymove {
+    from {
+        left: -300px;
+    }
+
+    to {
+        left: 250px;
+    }
+}
+/*KELLUVA ANKKA loppuu*/
+
+
+
+/*PISTETAULUKKO joka ilmestyy kierroksen jälkeen alkaa*/
+/*#totalScore {
+    margin: auto;
+    width: 10%;
+    padding: 10px;
+}*/
+
+#scores {
+    width: 200px;
+    padding: 10px;
+    background-color: white;
+    border: 3px solid black;
+    transform: rotate(-15deg);
+    left: 100px;
+    top: 200px;
+    position: absolute;
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    color: black;
+}
+.original {
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+
+
+.totalScore {
+    margin: auto;
+    width: 20%;
+    padding: 10px;
+    vertical-align: middle;
+    align-items: center;
+    background-color: white;
+}
+
+#scores::after {
+    text-decoration: inherit;
+}
+
+/*PISTETAULUKKO loppuu*/
+
+#prompt {
+    top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    padding: 10px;
+    background-color: white;
+    border: 3px solid black;
+    text-align: left;
+    filter: drop-shadow(0 0 40px #eed622);
+    font-family: 'Permanent Marker', cursive;
+    font-size: 39px;
+    position: relative;
+    color: black;
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+/*Peliohjeet alkaa*/
+html {
+    font-family: "Helvetica Neue", sans-serif;
+    width: 100%;
+    color: #666666;
+    text-align: center;
+}
+
+.popup-overlay {
+    visibility: hidden;
+    position: absolute;
+    background: #ffffff;
+    border: 3px solid black;
+    width: 40%;
+    height: 60%;
+    left: 200px;
+    top: 100px;
+    text-align: center;
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    z-index: 100;
+    color: black;
+}
+
+    .popup-overlay.active {
+        visibility: visible;
+        text-align: match-parent;
+    }
+
+.popup-content {
+    visibility: hidden;
+}
+
+    .popup-content.active {
+        visibility: visible;
+        text-align: center;
+    }
+
+
+    /*button:hover {
+        border: 1px solid #666666;
+        background: #666666;
+        color: #ffffff;
+    }*/
+
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+    .popupCloseButton:hover {
+        background-color: #ccc;
+    }
+/*Peliohjeet loppuu*/
+
+
+/*Tallenna score*/
+.popup-overlay2 {
+    top: 80px;
+    padding: 25px;
+    visibility: hidden;
+    position: absolute;
+    background: #ffffff;
+    border: 3px solid #666666;
+    width: 50%;
+    height: 75%;
+    left: 25%;
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    z-index: 100;
+    color: black;
+}
+
+    .popup-overlay2.active {
+        visibility: visible;
+        text-align: center;
+    }
+
+.popup-content2 {
+    visibility: hidden;
+}
+
+    .popup-content2.active {
+        visibility: visible;
+    }
+
+
+#nickname {
+
+}
+
+/*button:hover {
+    border: 1px solid #666666;
+    background: #666666;
+    color: #ffffff;
+}*/
+
+.popupCloseButton2 {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+    .popupCloseButton2:hover {
+        background-color: #ccc;
+    }
+/*TALLENNA SCORE loppuu*/
+
+
+
+/*Top scoret alkaa */
+
+#scoreTable {
+    margin: auto;
+    /*text-align: center;*/
+    margin-bottom: 25px;
+}
+
+td.nickname {
+    text-align: right;
+    padding-right: 5px;
+    width: 10%;
+}
+td.topscore {
+    text-align: left;
+    padding-left: 5px;
+    width: 10%;
+}
+.popup-overlay3 {
+    visibility: hidden;
+    position: absolute;
+    background: #ffffff;
+    border: 3px solid black;
+    width: 30%;
+    height: 50%;
+    top: 100px;
+    left: 630px;
+    padding: 25px;
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    z-index: 100;
+    color: black;
+}
+
+    .popup-overlay3.active {
+        visibility: visible;
+    }
+
+.popup-content3 {
+    visibility: hidden;
+}
+
+    .popup-content3.active {
+        visibility: visible;
+        text-align: center;
+        align-content: center;
+        vertical-align: middle;
+        align-items: center;
+    }
+
+#leaderBoard {
+    cursor: pointer;
+}
+
+
+.open3 {
+    cursor: pointer;
+    left: 1250px;
+    transform: rotate(30deg);
+    top: 50px;
+    position: absolute;
+}
+
+/*top scoret loppuu*/
+
+#help {
+    top: 15px;
+    left: 50px;
+    cursor: pointer;
+    position: absolute;
+}
+
+ 
